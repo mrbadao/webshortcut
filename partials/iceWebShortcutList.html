@@ -1,0 +1,27 @@
+<section class="col-sm-12 col-xs-12">
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1 class="text-capitalize text-center panel-title">List Icon</h1>
+			</div>
+			<div class="panel-body">
+				<div class="col-sm-12" ng-repeat="(shortcutGroup,shortcutItems) in shortcutList">
+					<h2 class="text-left text-capitalize">{{shortcutGroup}}</h2>
+
+					<div class="col-sm-12 col-xs-12 shortcutItem" ng-repeat="shortcutItem in shortcutItems">
+						<div class="col-xs-4">
+							<img ng-src="{{shortcutItem.shortcutImageUrl}}"
+								 class="img-responsive icon-shortcut"/>
+						</div>
+						<div class="col-xs-8">
+							<button class="btn btn-success pull-right"
+									ng-click="go('/choose-app/'+shortcutItem.shortcutId)">
+								Add Web Shortcut
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

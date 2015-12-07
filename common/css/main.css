@@ -1,0 +1,12 @@
+.container {
+	padding: 0;
+}
+
+.shortcutItem {
+	margin: 8px 0;
+}
+
+.icon-shortcut {
+	border: solid 1px #ddd;
+	border-radius: 15px;
+}
