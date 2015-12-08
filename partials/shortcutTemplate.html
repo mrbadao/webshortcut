@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><title>Facebook 2</title>
+<head><title>{{shortcutName}}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="robots" content="noindex, nofollow"/>
 	<meta name="viewport"
@@ -161,7 +161,7 @@
 		document.body.innerHTML = text;
 	}
 	if (document.referrer) {
-		document.write("<link rel='apple-touch-icon-precomposed' href='http://192.168.1.16/app_ico/override/asv/01.png' />");
+		document.write("<link rel='apple-touch-icon-precomposed' href='{{shortcutImage}}' />");
 		window.onload = function () {
 			setTimeout(scrollTo, 300, 0, 1);
 		}
@@ -177,7 +177,7 @@
 	var markup = "<div class='title'><img src='http://192.168.1.16/common/img/img_title_logo.png' alt='LINE DECO' width='117'/>" +
 			"<a href='linedeco://' class='close_pop'><img src='http://192.168.1.16/common/img/icon_title_delete2.png' alt='' width='25' /></a></div>" +
 			"<div class='app_icon cover'>" +
-			"<img src='http://192.168.1.16/app_ico/override/asv/01.png' alt='Facebook' width='72' /><p>Facebook 2</p></div><div class='massage_layer'>" +
+			"<img src='{{shortcutImage}}' alt='' width='72' /><p>{{shortcutName}}</p></div><div class='massage_layer'>" +
 			"<div class='layer_inner' > <div class='layer_main'>" + "<p class='headline'>Press " + icon1 + " and <br / > Select 'Add to Home Screen' </p> " +
 			"<p class='description'>If you delete the application which<br />you want to activate, the icon will not<br />work anymore. Please be careful.</p></div></div></div>";
 	console.log(markup);

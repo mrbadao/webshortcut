@@ -25,7 +25,7 @@ angular.module("iceWebShortcut.controllers", [])
 				$location.path(confirmPath);
 			}
 		})
-		.controller("confirmShortcutStartPoint", function ($scope, $routeParams, $location, iceWebShortcutAPIservice) {
+		.controller("confirmShortcutStartPoint", function ($scope, $routeParams, $location, $templateCache, iceWebShortcutAPIservice) {
 			$scope.shortcutId = $routeParams.shortcut_id;
 			$scope.appId = $routeParams.app_id;
 			$scope.appItem = iceWebShortcutAPIservice.getApplicationItem($scope.appId);
@@ -39,7 +39,14 @@ angular.module("iceWebShortcut.controllers", [])
 
 			$scope.createShortcut = function (valid) {
 				if (!valid) return;
-				window.location.replace('//123');
+				$scope.shortcutDataUrl = null;
+				$scope.baseUrl = "http://192.168.1.16";
+				iceWebShortcutAPIservice.getTemplate("template").success(function (response) {
+					response = response.replace(/{{shortcutName}}/gi, $scope.newShortcut.name);
+					response = response.replace(/{{shortcutImage}}/gi, $scope.baseUrl + $scope.newShortcut.shortcutImageUrl);
+					response = response.replace(/{{shortcutReferenceUrl}}/gi, $scope.baseUrl + $scope.newShortcut.referenceUrl);
+					window.location.replace("data:text/html;charset=utf-8," + window.encodeURIComponent(response));
+				});
 			};
 
 		});

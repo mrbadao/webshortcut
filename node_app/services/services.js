@@ -6,7 +6,7 @@
  *
  * */
 angular.module('iceWebShortcut.services', [])
-		.factory('iceWebShortcutAPIservice', function ($filter) {
+		.factory('iceWebShortcutAPIservice', function ($http) {
 					var iceWebShortcutAPI = {};
 					var $objShortcutData = {
 						asv: [
@@ -86,6 +86,10 @@ angular.module('iceWebShortcut.services', [])
 							}
 						});
 						return item;
+					};
+
+					iceWebShortcutAPI.getTemplate = function (name) {
+						return $http.get("partials/" + name + ".html")
 					};
 
 					return iceWebShortcutAPI;
