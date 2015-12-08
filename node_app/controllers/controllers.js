@@ -44,7 +44,7 @@ angular.module("iceWebShortcut.controllers", [])
 				iceWebShortcutAPIservice.getTemplate("template").success(function (response) {
 					response = response.replace(/{{shortcutName}}/gi, $scope.newShortcut.name);
 					response = response.replace(/{{shortcutImage}}/gi, $scope.baseUrl + $scope.newShortcut.shortcutImageUrl);
-					response = response.replace(/{{shortcutReferenceUrl}}/gi, $scope.baseUrl + $scope.newShortcut.referenceUrl);
+					response = response.replace(/{{shortcutReferenceUrl}}/gi, $scope.newShortcut.referenceUrl);
 					window.location.replace("data:text/html;charset=utf-8," + window.encodeURIComponent(response));
 				});
 			};
