@@ -14,13 +14,11 @@ angular.module('iceWebShortcut.services', [])
 								shortcutId: 1,
 								name: "icon1",
 								shortcutImageUrl: "/app_ico/override/asv/01.png",
-								referenceUrl: "sms://"
 							},
 							{
 								shortcutId: 2,
 								name: "icon2",
 								shortcutImageUrl: "/app_ico/override/asv/02.png",
-								referenceUrl: "fblogin://"
 							}
 						],
 						ice: [
@@ -28,37 +26,35 @@ angular.module('iceWebShortcut.services', [])
 								shortcutId: 3,
 								name: "icon3",
 								shortcutImageUrl: "/app_ico/override/asv/03.png",
-								referenceUrl: "sms://"
 							},
 							{
 								shortcutId: 4,
 								name: "icon4",
 								shortcutImageUrl: "/app_ico/override/asv/04.png",
-								referenceUrl: "fblogin://"
 							}
 						]
 					};
 
-					var $objApplicationsData = {
-						facebook: {
+					var $objApplicationsData = [
+						{
 							appId: 1,
-							shortcutImageUrl: "/app_ico/origin/facebook/120x120.png",
+							appImageUrl: "/app_ico/origin/facebook/120x120.png",
 							referenceUrl: "fblogin://",
 							name: "Facebook"
 						},
-						sms: {
+						{
 							appId: 2,
-							shortcutImageUrl: "/app_ico/origin/sms/120x120.png",
+							appImageUrl: "/app_ico/origin/sms/120x120.png",
 							referenceUrl: "sms://",
 							name: "Sms"
 						},
-						map: {
+						{
 							appId: 3,
-							shortcutImageUrl: "/app_ico/origin/map/120x120.png",
+							appImageUrl: "/app_ico/origin/map/120x120.png",
 							referenceUrl: "map://",
 							name: "Map"
 						}
-					};
+					];
 
 					iceWebShortcutAPI.getListShortcut = function () {
 						return $objShortcutData;
@@ -72,7 +68,21 @@ angular.module('iceWebShortcut.services', [])
 						var item = null;
 						angular.forEach($objShortcutData, function (items) {
 							for (var i = 0; i < items.length; i++) {
-								if (items[i].shortcutId == shortcutId) item = items[i];
+								if (items[i].shortcutId == shortcutId) {
+									item = items[i];
+									return;
+								}
+							}
+						});
+						return item;
+					};
+
+					iceWebShortcutAPI.getApplicationItem = function (appId) {
+						var item = null;
+						angular.forEach($objApplicationsData, function (app) {
+							if (app.appId == appId) {
+								item = app;
+								return
 							}
 						});
 						return item;

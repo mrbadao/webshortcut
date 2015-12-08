@@ -1,18 +1,27 @@
 <section class="col-sm-12">
 	<div class="container">
-		<h1 class="text-capitalize text-left">App list</h1>
+		<h1 class="text-capitalize text-left">Startup point list</h1>
 
 		<div class="col-sm-12">
-			<div class="col-sm-12">
-				<select class="form-control">
-					<option ng-repeat="app in appList">
-						{{app.name}}
-					</option>
-				</select>
-			</div>
-			<div class="col-sm-12" style="margin-top: 20px;">
-				<button class="btn btn-success form-control" ng-click="confirm()">Confirm</button>
-			</div>
+			<form name="appSelectForm" novalidate ng-submit="confirm(appSelectForm.$valid)">
+				<div class="col-sm-12">
+					<select class="form-control"
+							name="appIdSelected"
+							ng-model="appId" ng-required="true"
+							ng-options="app.appId as app.name for app in appList">
+						<option value="">Select App</option>
+					</select>
+					<span class="text-danger"
+						  ng-show="appSelectForm.appIdSelected.$error.required && !appSelectForm.appIdSelected.$pristine">
+						Startup point is required.
+					</span>
+				</div>
+				<div class="col-sm-12" style="margin-top: 20px;">
+					<button type="submit" ng-disabled="!appSelectForm.$valid" class="btn btn-success form-control">
+						Confirm
+					</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </section>

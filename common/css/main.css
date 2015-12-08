@@ -10,3 +10,7 @@
 	border: solid 1px #ddd;
 	border-radius: 15px;
 }
+
+.no-padding{
+	padding: 0;
+}
