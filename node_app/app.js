@@ -7,7 +7,10 @@ angular.module('iceWebShortcut', [
 	"iceWebShortcut.controllers",
 	'ngRoute'
 ]).
-config(['$routeProvider', function ($routeProvider) {
+config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+	$locationProvider.html5Mode(true);
+	$locationProvider.hashPrefix = '!';
+
 	$routeProvider
 			.when("/home", {
 				caseInsensitiveMatch: true,
@@ -25,5 +28,4 @@ config(['$routeProvider', function ($routeProvider) {
 				controller: "confirmShortcutStartPoint"
 			})
 			.otherwise({redirectTo: '/home'});
-	//$locationProvider.html5Mode(false);
 }]);
