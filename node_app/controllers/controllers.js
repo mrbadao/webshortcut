@@ -18,7 +18,17 @@ angular.module("iceWebShortcut.controllers", [])
 			$scope.appList = iceWebShortcutAPIservice.getListApplication();
 			$scope.shortcutId = $routeParams.shortcut_id;
 			$scope.appId = null;
+
+			$scope.updateAppId = function (id) {
+				$scope.appId = id;
+			}
+			;
+
 			$scope.confirm = function (valid) {
+					if (!$scope.appId) {
+						alert("You have not choosen any app!");
+						return;
+					}
 				var confirmPath = "/confirm/:shortcut_id/:app_id";
 				confirmPath = confirmPath.replace(":shortcut_id", $scope.shortcutId);
 				confirmPath = confirmPath.replace(":app_id", $scope.appId);

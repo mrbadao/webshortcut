@@ -11,6 +11,120 @@
 	border-radius: 15px;
 }
 
-.no-padding{
+.no-padding {
 	padding: 0;
+}
+
+.origin-ico,
+.new-ico {
+	min-height: 1px;
+	position: relative;
+}
+
+/*confirm*/
+section{
+	margin-bottom: 15px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	margin-left: 0;
+	margin-right: 0;
+}
+section .title{
+	font-size: 14px;
+	font-weight: 600;
+	margin: 10px auto 0;
+}
+.confirm {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+}
+
+.origin-ico:after,
+.new-ico:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.origin-ico {
+	width: 30%;
+	float: left;
+	padding-right: 15px;
+}
+.origin-ico img{
+	width: 72px;
+	border-radius: 20px;
+}
+
+.new-ico {
+	width: 70%;
+	float: left;
+}
+
+.new-ico > span,
+.new-ico > img,
+.new-ico > .info {
+	float: left;
+}
+
+.new-ico span.glyphicon {
+	display: block;
+	height: 72px;
+	width: 35px;
+	text-align: center;
+	font-size: 25px;
+	line-height: 72px;
+}
+
+.new-ico > img {
+	width: 48px;
+	margin-top: 15px;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+.new-ico .info{
+	width: 110px;
+	float: left;
+}
+
+.new-ico .info span {
+	display: inline-block;
+	width: 100%;
+	color: #666;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding-left: 10px;
+}
+
+.new-ico .info-name {
+	margin-top: 20px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.confirm-info {
+	padding-top: 60px;
+}
+
+.confirm-info label {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.confirm-info .form-control {
+	border-radius: 0;
+	background: #d5d5d5;
+	box-shadow: none !important;
+}
+
+.confirm-info .notice {
+	display: inline-block;
+	position: relative;
+	margin-top: 15px;
+	font-size: 18px;
+	font-weight: 600;
 }
