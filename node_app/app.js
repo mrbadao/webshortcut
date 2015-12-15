@@ -24,7 +24,7 @@ config(['$routeProvider', '$locationProvider', function ($routeProvider, $locati
 			})
 			.when("/confirm/:shortcut_id/:app_id", {
 				caseInsensitiveMatch: true,
-				templateUrl: "../partials/iceWebShortcutConfirm.html",
+				templateUrl: "partials/iceWebShortcutConfirm.html",
 				controller: "confirmShortcutStartPoint"
 			})
 			.otherwise({redirectTo: '/home'});
