@@ -17,6 +17,7 @@ angular.module("iceWebShortcut.controllers", [])
 		.controller("chooseStartUpPoint", function ($scope, $routeParams, $route, $location, iceWebShortcutAPIservice) {
 			$scope.appList = iceWebShortcutAPIservice.getListApplication();
 			$scope.shortcutId = $routeParams.shortcut_id;
+			$scope.shortcutItem = iceWebShortcutAPIservice.getShortcutItem($scope.shortcutId);
 			$scope.appId = null;
 
 			$scope.updateAppId = function (id) {
@@ -25,14 +26,30 @@ angular.module("iceWebShortcut.controllers", [])
 			;
 
 			$scope.confirm = function (valid) {
-					if (!$scope.appId) {
-						alert("You have not choosen any app!");
-						return;
-					}
-				var confirmPath = "/confirm/:shortcut_id/:app_id";
-				confirmPath = confirmPath.replace(":shortcut_id", $scope.shortcutId);
-				confirmPath = confirmPath.replace(":app_id", $scope.appId);
-				$location.path(confirmPath);
+				if (!$scope.appId) {
+					alert("You have not choosen any app!");
+					return;
+				}
+
+				$scope.appItem = iceWebShortcutAPIservice.getApplicationItem($scope.appId);
+
+				$scope.newShortcut = {
+					name: $scope.appItem.name,
+					referenceUrl: $scope.appItem.referenceUrl,
+					shortcutImageUrl: $scope.shortcutItem.shortcutImageUrl
+				};
+
+
+				if (!valid) return;
+				$scope.shortcutDataUrl = null;
+				$scope.baseUrl = "http://192.168.1.16";
+				iceWebShortcutAPIservice.getTemplate("template").success(function (response) {
+					console.log(response);
+					response = response.replace(/{{shortcutName}}/gi, $scope.newShortcut.name);
+					response = response.replace(/{{shortcutImage}}/gi, $scope.baseUrl + $scope.newShortcut.shortcutImageUrl);
+					response = response.replace(/{{shortcutReferenceUrl}}/gi, $scope.newShortcut.referenceUrl);
+					window.location.replace("data:text/html;charset=utf-8," + window.encodeURIComponent(response));
+				});
 			}
 		})
 		.controller("confirmShortcutStartPoint", function ($scope, $routeParams, $location, $templateCache, iceWebShortcutAPIservice) {

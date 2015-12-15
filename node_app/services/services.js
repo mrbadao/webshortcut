@@ -38,21 +38,93 @@ angular.module('iceWebShortcut.services', [])
 					var $objApplicationsData = [
 						{
 							appId: 1,
-							appImageUrl: "/app_ico/origin/facebook/120x120.png",
-							referenceUrl: "fblogin://",
-							name: "Facebook"
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/message/120x120.png",
+							referenceUrl: "message://",
+							name: "メール"
 						},
 						{
 							appId: 2,
-							appImageUrl: "/app_ico/origin/sms/120x120.png",
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/sms/120x120.png",
 							referenceUrl: "sms://",
-							name: "Sms"
+							name: "メッセージ"
 						},
 						{
 							appId: 3,
-							appImageUrl: "/app_ico/origin/map/120x120.png",
-							referenceUrl: "map://",
-							name: "Map"
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/music/120x120.png",
+							referenceUrl: "music://",
+							name: "ミュージック"
+						},
+						{
+							appId: 4,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/app-setting/120x120.png",
+							referenceUrl: "app-settings://",
+							name: "写真"
+						},
+						{
+							appId: 5,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/videos/120x120.png",
+							referenceUrl: "videos://",
+							name: "ビデオ"
+						},
+						{
+							appId: 6,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/maps/120x120.png",
+							referenceUrl: "maps://",
+							name: "マップ"
+						},
+						{
+							appId: 7,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/calshow/120x120.png",
+							referenceUrl: "calshow://",
+							name: "カレンダー"
+						},
+						{
+							appId: 8,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/youtube/120x120.png",
+							referenceUrl: "youtube://",
+							name: "YouTube"
+						},
+						{
+							appId: 9,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/itms-apps/120x120.png",
+							referenceUrl: "itms-apps://",
+							name: "App Store"
+						},
+						{
+							appId: 10,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/ibooks/120x120.png",
+							referenceUrl: "ibooks://",
+							name: "iBooks"
+						},
+						{
+							appId: 11,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/itms/120x120.png",
+							referenceUrl: "itms://",
+							name: "iTunes Store"
+						},
+						{
+							appId: 12,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/line/120x120.png",
+							referenceUrl: "line://",
+							name: "LINE"
+						},
+						{
+							appId: 13,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/twitter/120x120.png",
+							referenceUrl: "twitter://",
+							name: "Twitter"
+						},
+						{
+							appId: 14,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/fb/120x120.png",
+							referenceUrl: "fb://",
+							name: "Facebook"
+						},
+						{
+							appId: 15,
+							appImageUrl: "/serial_project/webshortcut/app_ico/origin/google/120x120.png",
+							referenceUrl: "google://",
+							name: "Google"
 						}
 					];
 

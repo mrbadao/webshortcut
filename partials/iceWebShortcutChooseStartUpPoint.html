@@ -1,5 +1,5 @@
-<section class="col-sm-12">
-	<div class="container">
+<section class="col-sm-12 start-point">
+	<div class="container" style="margin-bottom: 50px;">
 		<h1 class="text-capitalize text-center">Startup point list</h1>
 
 		<div class="col-sm-12 col-xs-12">
@@ -10,7 +10,7 @@
 							 class="img-responsive icon-shortcut"/>
 					</div>
 					<div class="col-sm-8 col-xs-8">
-						<h3 class="pull-left">{{app.name}}</h3>
+						<h3 class="pull-left title">{{app.name}}</h3>
 						<input class="pull-right" name="app_id" type="radio"
 							   style="margin-top: 27px;"
 							   ng-click="updateAppId(app.appId)"
@@ -21,7 +21,8 @@
 				<button type="submit"
 						class="nav navbar-fixed-bottom btn-lg btn-success col-sm-12"
 						ng-disabled="!appSelectForm.$valid">
-					Confirm
+					<i class="glyphicon glyphicon-plus"></i>
+					Create Shortcut
 				</button>
 			</form>
 		</div>
