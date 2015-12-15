@@ -1,27 +1,73 @@
-<section class="col-sm-12 col-xs-12" style="margin-top: 50px;">
+<section class="shortcut-list-content">
 	<div class="container">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="text-capitalize text-center panel-title">List Icon</h1>
+		<div class="top">
+			<div class="banner">
+				<div class="col-sm-6 col-xs-6">
+					<img src="common/img/banner.png"
+						 class="img-responsive center-block"
+						 title="banner"
+						 alt="banner"/>
+				</div>
+				<div class="col-sm-6 col-xs-6">
+					<img src="common/img/banner.png"
+						 class="img-responsive center-block"
+						 title="banner"
+						 alt="banner"/>
+				</div>
 			</div>
-			<div class="panel-body">
-				<div class="col-sm-12" ng-repeat="(shortcutGroup,shortcutItems) in shortcutList">
-					<h2 class="text-left text-capitalize" style="z-index: -1;">{{shortcutGroup}}</h2>
+			<div class="content">
+				<h1 class="title">アイテム名アイテム名</h1>
 
-					<div class="col-sm-12 col-xs-12 shortcutItem" ng-repeat="shortcutItem in shortcutItems">
-						<div class="col-xs-4 col-sm-4">
-							<img ng-src="{{shortcutItem.shortcutImageUrl}}"
-								 class="img-responsive icon-shortcut"/>
-						</div>
-						<div class="col-xs-8 col-sm-8" style="z-index: 999;">
-							<button class="btn-sm btn-success pull-right"
-									ng-click="go('/choose-app/'+shortcutItem.shortcutId)">
-								Add Web Shortcut
-							</button>
-						</div>
-					</div>
+				<p>紹介文テキスト紹介文テキスト紹介文テキスト♪</p>
+
+				<p>紹介文テキスト紹介文テキスト紹介文テキスト♪</p>
+			</div>
+		</div>
+
+		<div class="solid-line"></div>
+		<div class="middle">
+			<div class="content">
+				<h1 class="title">ホーム画面／ロック画面の壁紙</h1>
+
+				<p>※下の壁紙画像をタップして、壁紙を保存してください</p>
+			</div>
+			<div class="banner">
+				<div class="col-sm-6 col-xs-6">
+					<img src="common/img/banner.png"
+						 class="img-responsive center-block"
+						 title="banner"
+						 alt="banner"/>
+				</div>
+				<div class="col-sm-6 col-xs-6">
+					<img src="common/img/banner.png"
+						 class="img-responsive center-block"
+						 title="banner"
+						 alt="banner"/>
+				</div>
+			</div>
+			<div class="content">
+				<p>※お使いの機種によって壁紙のサイズが異なります。</p>
+			</div>
+		</div>
+		<div class="solid-line"></div>
+
+		<div class="shortcut-items">
+			<div class="content">
+				<h1 class="title">アイコン一覧</h1>
+
+				<p>※下の各アイコン画像をタップして、起動するアプリを設定してください。</p>
+			</div>
+			<div class="content-items">
+				<div class="item" ng-repeat="shortcutItem in shortcutList">
+					<img ng-src="{{shortcutItem.shortcutImageUrl}}"
+						 ng-click="go('/choose-app/'+shortcutItem.shortcutId)"
+						 class="img-responsive" title="{{shortcutItem.name}}" alt="{{shortcutItem.name}}"/>
 				</div>
 			</div>
 		</div>
+		<div class="solid-line"></div>
 	</div>
 </section>
+<footer>
+	<h1 class="title text-center">©作家名／集英社</h1>
+</footer>

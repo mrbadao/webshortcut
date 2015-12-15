@@ -1,30 +1,26 @@
-<section class="col-sm-12 start-point">
-	<div class="container" style="margin-bottom: 50px;">
-		<h1 class="text-capitalize text-center">Startup point list</h1>
+<section class="startup-points col-sm-12">
+	<div class="container">
+		<div class="header">
+			<h1 class="title text-center">起動するアプリの選択</h1>
 
-		<div class="col-sm-12 col-xs-12">
-			<form name="appSelectForm" novalidate ng-submit="confirm(appSelectForm.$valid)">
-				<div class="col-sm-12 col-xs-12" ng-repeat="app in appList" style="margin-top:5px; margin-bottom: 5px;">
-					<div class="col-xs-4 col-sm-4">
+			<p class="text-center">前の画面で選択したアイコンを使いたいアプリを</p>
+
+			<p class="text-center">下のアプリ一覧から選んでください。</p>
+		</div>
+		<div class="solid-line"></div>
+		<div class="app-content">
+			<div ng-repeat="app in appList">
+				<div class="app-item" ng-click="createShortcut(app.appId)">
+					<div class="app-img">
 						<img ng-src="{{app.appImageUrl}}"
-							 class="img-responsive icon-shortcut"/>
+							 alt="{{app.name}}"
+							 title="{{app.name}}"
+							 class="img-responsive center-block"/>
 					</div>
-					<div class="col-sm-8 col-xs-8">
-						<h3 class="pull-left title">{{app.name}}</h3>
-						<input class="pull-right" name="app_id" type="radio"
-							   style="margin-top: 27px;"
-							   ng-click="updateAppId(app.appId)"
-							   ng-model="appId" ng-value="app.appId">
-					</div>
+					<span class="app-name">{{app.name}}</span>
 				</div>
-
-				<button type="submit"
-						class="nav navbar-fixed-bottom btn-lg btn-success col-sm-12"
-						ng-disabled="!appSelectForm.$valid">
-					<i class="glyphicon glyphicon-plus"></i>
-					Create Shortcut
-				</button>
-			</form>
+				<div class="solid-line"></div>
+			</div>
 		</div>
 	</div>
 </section>

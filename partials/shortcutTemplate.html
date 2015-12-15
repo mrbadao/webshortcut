@@ -58,7 +58,12 @@
 		line-height: 53px;
 		text-align: center;
 		border-bottom: 1px solid #AEAEAE;
-		background-color: #f7f7f7
+	}
+
+	h1.title {
+		background: #fff;
+		border: none;
+		margin-bottom: 20px;
 	}
 
 	.close_pop {
@@ -75,9 +80,19 @@
 
 	.app_icon {
 		position: relative;
-		padding-top: 29px;
+		padding-top: 15px;
+		width: 100%;
+		margin: 0 auto;
+		border: solid 2px #ddd;
+		border-radius: 20px;
 		text-align: center;
 		font-weight: bold;
+	}
+
+	.wrapper{
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 
 	.app_icon p {
@@ -86,10 +101,12 @@
 		text-overflow: ellipsis;
 		width: 88px;
 		margin: 0 auto;
+		line-height: normal;
 	}
 
 	.app_icon img {
 		border-radius: 17px 17px;
+		padding-top: 14px;
 	}
 
 	.app_icon.cover:after {
@@ -105,34 +122,22 @@
 		z-index: 2;
 	}
 
-	.massage_layer {
-		position: fixed;
-		left: 50%;
-		bottom: 0;
-		width: 284px;
-		margin-left: -142px;
-		padding-top: 3px;
-		background: url(http://192.168.1.16/common/img/layer_massage_1.gif) no-repeat 0 0;
-		background-size: 284px auto;
-	}
-
 	.massage_layer .layer_inner {
 		padding-bottom: 26px;
-		background: url(http://192.168.1.16/common/img/layer_massage_2.png) no-repeat 0 100%;
-		background-size: 284px auto;
 	}
 
 	.massage_layer .layer_main {
 		padding: 14px 0 22px;
-		background: #e7e7e7;
 		text-align: center;
 	}
 
 	.massage_layer .layer_main .headline {
-		padding-bottom: 10px;
-		padding-top: 5px;
+		padding-bottom: 15px;
 		font-size: 16px;
 		font-weight: bold;
+		width: 100%;
+		line-height: 30px;
+		white-space: normal;
 	}
 
 	.massage_layer .layer_main .headline img {
@@ -155,8 +160,16 @@
 	}
 
 	.massage_layer .layer_main .description {
-		font-size: 14px;
-	} </style>
+		font-size: 12px;
+		color: #1a1a1a;
+		width: 100%;
+		line-height: 22px;
+	}
+
+	.massage_layer .layer_main .description strong {
+		color: red;
+	}
+	</style>
 	<script type="text/javascript"> function write(text) {
 		document.body.innerHTML = text;
 	}
@@ -167,20 +180,14 @@
 		}
 	} </script>
 </head>
-<body><a id="go" href="sms://"></a>
-<script type="text/javascript"> if (!document.referrer) {
+<body><a id="go" href="{{shortcutReferenceUrl}}"></a>
+<script type="text/javascript">if (!document.referrer) {
 	document.write("<div style='padding: 10px;'><p style=''></p></div>");
 	activate();
 } else {
 	var icon1 = "<img width=16 class='ico_message_1' src='http://192.168.1.16/common/img/icon_addhome.png' alt='safari menu button'>";
 	var icon2 = "<img width=34 class='ico_message_2' src='http://192.168.1.16/common/img/icon_addhome_ios6.png' alt='safari menu button'>";
-	var markup = "<div class='title'><img src='http://192.168.1.16/common/img/img_title_logo.png' alt='LINE DECO' width='117'/>" +
-			"<a href='linedeco://' class='close_pop'><img src='http://192.168.1.16/common/img/icon_title_delete2.png' alt='' width='25' /></a></div>" +
-			"<div class='app_icon cover'>" +
-			"<img src='{{shortcutImage}}' alt='' width='72' /><p>{{shortcutName}}</p></div><div class='massage_layer'>" +
-			"<div class='layer_inner' > <div class='layer_main'>" + "<p class='headline'>Press " + icon1 + " and <br / > Select 'Add to Home Screen' </p> " +
-			"<p class='description'>If you delete the application which<br />you want to activate, the icon will not<br />work anymore. Please be careful.</p></div></div></div>";
-	console.log(markup);
+	var markup = "<div class='title'><img src='http://192.168.1.16/common/img/img_title_logo.png' alt='LINE DECO' width='117'/><h1 class='title'>アイコンの設定</h1><div class='wrapper'><div class='app_icon cover'><img src='{{shortcutImage}}' alt='' width='72' /><p>{{shortcutName}}</p><div class='massage_layer'><div class='layer_inner' > <div class='layer_main'>" + "<p class='headline'>下の" + icon1 + " ボタンをタップして <br / > 「ホーム画面に追加」を選択してください。</p><p class='description'>※このアイコンは元のアプリを起動させるための<br />「ショートカットアイコン」となりますので、<br /><strong>リンク元のアプリは絶対に削除しないでください</strong><br/>元のアプリを削除してしまうと、このアイコンは<<br/>機能しなくなってしまいます。</p></div></div></div></div></div><footer>©集英社</footer>";
 	write(markup);
 }
 function activate() {

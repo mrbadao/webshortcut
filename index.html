@@ -10,29 +10,22 @@
 	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
 	<link rel="stylesheet" href="/common/css/main.css"/>
 	<script>
-<<<<<<< HEAD
 		document.write("<base href='/' />");
-=======
-		document.write("<base href='/'/>");
->>>>>>> origin/master
 	</script>
-	<title>Web shortcut</title>
+	<title>{{title}}</title>
 </head>
 <body>
+<nav class="nav">
+	<img src="common/img/img_title_logo.png" title="logo image" alt="logo image">
+</nav>
+
 <ng-view></ng-view>
 
-<!--<script src="node_modules/jquery/dist/jquery.min.js"></script>-->
-<!--<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
 
 <script src="/node_modules/angular/angular.js"></script>
 <script src="/node_modules/angular-route/angular-route.js"></script>
 <script src="/node_app/app.js"></script>
 <script src="/node_app/services/services.js"></script>
 <script src="/node_app/controllers/controllers.js"></script>
-<!--<script>-->
-<!--angular.element(document).ready(function () {-->
-<!--angular.bootstrap(document, ['iceWebShortcut', "iceWebShortcut.controllers"]);-->
-<!--});-->
-<!--</script>-->
 </body>
 </html>

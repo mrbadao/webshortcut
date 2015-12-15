@@ -1,133 +1,124 @@
-.start-point h3.title{
-	font-size: 18px;
-}
-
-.container {
-	padding: 0;
-}
-
-.shortcutItem {
-	margin: 8px 0;
-}
-
-.icon-shortcut {
-	border: solid 1px #ddd;
-	border-radius: 15px;
-}
-
-.no-padding {
-	padding: 0;
-}
-
-.origin-ico,
-.new-ico {
+/*common*/
+div {
 	min-height: 1px;
 	position: relative;
 }
 
-/*confirm*/
-section{
-	margin-bottom: 15px;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	margin-left: 0;
-	margin-right: 0;
-}
-section .title{
-	font-size: 14px;
-	font-weight: 600;
-	margin: 10px auto 0;
-}
-.confirm {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	border-top: solid 1px #ddd;
-	border-bottom: solid 1px #ddd;
-}
-
-.origin-ico:after,
-.new-ico:after {
+div:after {
 	display: table;
 	content: "";
 	clear: both;
 }
 
-.origin-ico {
-	width: 30%;
-	float: left;
-	padding-right: 15px;
-}
-.origin-ico img{
-	width: 72px;
-	border-radius: 20px;
+nav.nav {
+	border-bottom: solid 1px #ddd;
+	padding: 5px 0;
 }
 
-.new-ico {
-	width: 70%;
-	float: left;
-}
-
-.new-ico > span,
-.new-ico > img,
-.new-ico > .info {
-	float: left;
-}
-
-.new-ico span.glyphicon {
+nav.nav > img {
 	display: block;
-	height: 72px;
-	width: 35px;
-	text-align: center;
-	font-size: 25px;
-	line-height: 72px;
+	margin: 0 auto;
 }
 
-.new-ico > img {
-	width: 48px;
-	margin-top: 15px;
-	margin-left: 10px;
-	vertical-align: middle;
+.title {
+	font-size: 16px;
+	font-weight: bold;
 }
 
-.new-ico .info{
-	width: 110px;
+.p {
+	font-weight: normal;
+	font-size: 11px;
+}
+
+div.solid-line {
+	height: 1px;
+	background: #ddd;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+/*shortcut-list-content*/
+.shortcut-list-content .top {
+	width: 100%;
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+.shortcut-items,
+.shortcut-items .content-items,
+.app-content .app-item {
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.content-items .item {
+	width: 25%;
+	padding: 4px;
 	float: left;
 }
 
-.new-ico .info span {
-	display: inline-block;
+.item .img-responsive {
+	border: solid 1px #ddd;
+	border-radius: 18px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.shortcut-list-content .middle .banner {
+	margin-bottom: 8px;
+}
+
+/*startup-points*/
+.startup-points .header,
+.startup-points .app-content {
 	width: 100%;
-	color: #666;
+}
+
+.startup-points .container {
+	padding: 0;
+}
+
+.startup-points .header .title {
+	font-size: 18px;
+}
+
+.startup-points .header p {
+	font-size: 11px;
+}
+
+.app-item {
+	height: 101px;
+	cursor: pointer;
+}
+
+.app-item img,
+.app-item .app-name,
+.app-item .app-img {
+	float: left;
+	position: relative;
+}
+
+.app-img {
+	height: 85px;
+	width: 30%;
+}
+
+.app-item img {
+	width: auto;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.app-item .app-name {
+	line-height: 85px;
+	font-size: 17px;
+	font-weight: 600;
+	width: 70%;
+	display: inline-block;
+	position: relative;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	padding-left: 10px;
-}
-.new-ico .info-name {
-	margin-top: 20px;
-	font-size: 12px;
-	font-weight: 600;
-}
-
-.confirm-info {
-	padding-top: 60px;
-}
-
-.confirm-info label {
-	font-size: 18px;
-	font-weight: 600;
-}
-
-.confirm-info .form-control {
-	border-radius: 0;
-	background: #d5d5d5;
-	box-shadow: none !important;
-}
-
-.confirm-info .notice {
-	display: inline-block;
-	position: relative;
-	margin-top: 15px;
-	font-size: 18px;
-	font-weight: 600;
 }

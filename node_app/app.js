@@ -13,19 +13,22 @@ config(['$routeProvider', '$locationProvider', function ($routeProvider, $locati
 
 	$routeProvider
 			.when("/home", {
+				title: "各コンテンツDLページ",
 				caseInsensitiveMatch: true,
 				templateUrl: "partials/iceWebShortcutList.html",
 				controller: "getListShortcutCtrl"
 			})
 			.when("/choose-app/:shortcut_id", {
+				title: "アイコン設定_起動先選択",
 				caseInsensitiveMatch: true,
 				templateUrl: "partials/iceWebShortcutChooseStartUpPoint.html",
 				controller: "chooseStartUpPoint"
 			})
-			.when("/confirm/:shortcut_id/:app_id", {
-				caseInsensitiveMatch: true,
-				templateUrl: "partials/iceWebShortcutConfirm.html",
-				controller: "confirmShortcutStartPoint"
-			})
 			.otherwise({redirectTo: '/home'});
+}]).
+run(['$rootScope', function ($rootScope) {
+	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+		$rootScope.title = current.$$route.title;
+	})
 }]);
+
