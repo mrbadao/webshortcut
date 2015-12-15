@@ -60,7 +60,7 @@
 			<div class="content-items">
 				<div class="item" ng-repeat="shortcutItem in shortcutList">
 					<img ng-src="{{shortcutItem.shortcutImageUrl}}"
-						 ng-click="go('/choose-app/'+shortcutItem.shortcutId)"
+						 ng-click="go(appConfig.url+'/choose-app/'+shortcutItem.shortcutId)"
 						 class="img-responsive" title="{{shortcutItem.name}}" alt="{{shortcutItem.name}}"/>
 				</div>
 			</div>

@@ -8,9 +8,10 @@
  * @requires $scope
  * */
 angular.module("iceWebShortcut.controllers", [])
-		.controller("getListShortcutCtrl", function ($scope, iceWebShortcutAPIservice) {
+		.controller("getListShortcutCtrl", function ($scope, iceWebShortcutAPIservice,Config) {
 			$scope.shortcutList = iceWebShortcutAPIservice.getListShortcut();
 			$scope.go = function (path) {
+				console.log(path);
 				window.open(path, '_blank');
 			}
 		})
@@ -27,10 +28,10 @@ angular.module("iceWebShortcut.controllers", [])
 					shortcutImageUrl: $scope.shortcutItem.shortcutImageUrl
 				};
 				$scope.shortcutDataUrl = null;
-				$scope.baseUrl = "http://192.168.1.16";
+				$scope.baseUrl = Config.url;
 				iceWebShortcutAPIservice.getTemplate("iceTemplate").success(function (response) {
 					response = response.replace(/{{shortcutName}}/gi, $scope.newShortcut.name);
-					response = response.replace(/{{shortcutImage}}/gi, $scope.baseUrl + $scope.newShortcut.shortcutImageUrl);
+					response = response.replace(/{{shortcutImage}}/gi, $scope.newShortcut.shortcutImageUrl);
 					response = response.replace(/{{shortcutReferenceUrl}}/gi, $scope.newShortcut.referenceUrl);
 					window.location.replace("data:text/html;charset=utf-8," + window.encodeURIComponent(response));
 					//console.log("data:text/html;charset=utf-8," + window.encodeURIComponent(response));

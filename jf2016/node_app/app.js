@@ -8,7 +8,9 @@ angular.module('iceWebShortcut', [
 	'ngRoute'
 ]).
 constant("Config", {
-	"url": "http://192.168.1.16/",
+	"url": "http://192.168.1.16/jf2016/",
+	"favicon": "common/favicon.png",
+	"logo": "common/img/img_title_logo.png",
 	"port": "80",
 	"base": "/",
 	"css": [
@@ -40,7 +42,6 @@ run(['$rootScope', 'Config', function ($rootScope, Config) {
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		$rootScope.title = current.$$route.title;
 		$rootScope.appConfig = Config;
-		console.log(Config);
 	})
 }]);
 
