@@ -7,6 +7,16 @@ angular.module('iceWebShortcut', [
 	"iceWebShortcut.controllers",
 	'ngRoute'
 ]).
+constant("Config", {
+	"url": "http://192.168.1.16/",
+	"port": "80",
+	"base": "/",
+	"css": [
+		"node_modules/bootstrap/dist/css/bootstrap.min.css",
+		"node_modules/bootstrap/dist/css/bootstrap-theme.min.css",
+		"common/css/main.css"
+	]
+}).
 config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 	$locationProvider.hashPrefix = '!';
@@ -26,9 +36,11 @@ config(['$routeProvider', '$locationProvider', function ($routeProvider, $locati
 			})
 			.otherwise({redirectTo: '/home'});
 }]).
-run(['$rootScope', function ($rootScope) {
+run(['$rootScope', 'Config', function ($rootScope, Config) {
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		$rootScope.title = current.$$route.title;
+		$rootScope.appConfig = Config;
+		console.log(Config);
 	})
 }]);
 

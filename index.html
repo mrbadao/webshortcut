@@ -5,14 +5,16 @@
 	<meta name="robots" content="noindex, nofollow"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
 	<link rel="icon" type="image/png" href="/common/favicon.png">
-	<meta name="decorator" content="line deco application icon change"/>
-	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" href="/common/css/main.css"/>
-	<script>
-		document.write("<base href='/' />");
-	</script>
+	<meta name="decorator" content="ice application icon change"/>
+	<!--<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>-->
+	<!--<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>-->
+	<!--<link rel="stylesheet" href="/common/css/main.css"/>-->
+	<link rel="stylesheet" ng-repeat="css in appConfig.css" href="{{appConfig.url+css}}"/>
+	<base href="/" />
 	<title>{{title}}</title>
+	<!--<script>-->
+		<!--document.write("<base href='{{appConfig.base}}' />");-->
+	<!--</script>-->
 </head>
 <body>
 <nav class="nav">
